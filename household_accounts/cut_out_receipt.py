@@ -10,7 +10,7 @@ import os
 class GetReceiptContours:
     # interim_relative_path = "Colab Notebooks/receipt/img/interim"
     # interim_path = os.path.join('/content/drive/MyDrive/', interim_relative_path)
-    interim_path = "src/cut_out_receipt"
+    interim_path = "cut_out_receipt"
     def __init__(self, input_path):
         self.input_file = cv2.imread(input_path)
         self.input_filename = os.path.splitext(os.path.basename(input_path))[0]
@@ -144,7 +144,7 @@ class GetEachReceiptImg(GetReceiptContours):
         )
         cv2.imwrite(
             "{}/receipt_{}_{}.png".format(
-                'src/household_accounts/templates/cut_out_receipt', self.input_filename, receipt_no
+                'household_accounts/templates/cut_out_receipt', self.input_filename, receipt_no
             ),
             dst,
         )

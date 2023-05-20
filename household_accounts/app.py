@@ -15,7 +15,7 @@ import glob
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 # アップロードされたファイルを保存するディレクトリのパス
-UPLOAD_FOLDER = 'src/original_receipt'
+UPLOAD_FOLDER = 'original_receipt'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
@@ -51,11 +51,11 @@ def upload_file():
         # ここにファイルの処理を記述する
         cut_out_receipts_main(saved_path)
         #cutした画像のパスを取得
-        cut_out_path = glob.glob('src/household_accounts/templates/cut_out_receipt/*.png')
+        cut_out_path = glob.glob('household_accounts/templates/cut_out_receipt/*.png')
         if cut_out_path != []:
             cut_out_path_ = cut_out_path
         else:
-            cut_out_path_ = glob.glob('src/original_receipt/*.JPG')
+            cut_out_path_ = glob.glob('original_receipt/*.JPG')
         img = Image.open(cut_out_path_[0])
         # img    
         # グレースケール化する
