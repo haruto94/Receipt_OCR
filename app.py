@@ -51,7 +51,7 @@ def upload_file():
         # ここにファイルの処理を記述する
         cut_out_receipts_main(saved_path)
         #cutした画像のパスを取得
-        cut_out_path = glob.glob('household_accounts/templates/cut_out_receipt/*.png')
+        cut_out_path = glob.glob('templates/cut_out_receipt/*.png')
         if cut_out_path != []:
             cut_out_path_ = cut_out_path
         else:

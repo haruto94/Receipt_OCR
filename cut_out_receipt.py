@@ -144,7 +144,7 @@ class GetEachReceiptImg(GetReceiptContours):
         )
         cv2.imwrite(
             "{}/receipt_{}_{}.png".format(
-                'household_accounts/templates/cut_out_receipt', self.input_filename, receipt_no
+                'templates/cut_out_receipt', self.input_filename, receipt_no
             ),
             dst,
         )
